@@ -12,20 +12,20 @@ from groq import Groq
 warnings.filterwarnings("ignore")
 
 
-# Load secrets from a default or user-specified path
-def load_secrets(default_path=None):
-    """
-    Load secrets from a TOML file located at `default_path` or a user-specified path.
-    """
-    path = default_path or r"./secrets.toml"  # Default to the current working directory
-    try:
-        if not os.path.exists(path):
-            raise FileNotFoundError(f"Secrets file not found at {path}")
-        with open(path, "r") as file:
-            return toml.load(file)
-    except Exception as e:
-        st.error(f"Failed to load secrets: {e}")
-        return None
+# # Load secrets from a default or user-specified path
+# def load_secrets(default_path=None):
+#     """
+#     Load secrets from a TOML file located at `default_path` or a user-specified path.
+#     """
+#     path = default_path or r"./secrets.toml"  # Default to the current working directory
+#     try:
+#         if not os.path.exists(path):
+#             raise FileNotFoundError(f"Secrets file not found at {path}")
+#         with open(path, "r") as file:
+#             return toml.load(file)
+#     except Exception as e:
+#         st.error(f"Failed to load secrets: {e}")
+#         return None
 
 
 # Function to extract LinkedIn profile data
@@ -125,10 +125,10 @@ def main():
     st.write("Analyze LinkedIn profiles and generate cold calling strategies.")
 
     # Specify the default path to the secrets file
-    default_secrets_path = r"./secrets.toml"  # Or any other standard location
-    secrets = load_secrets(default_secrets_path)
-    if not secrets:
-        return
+    # default_secrets_path = r"./secrets.toml"  # Or any other standard location
+    # secrets = load_secrets(default_secrets_path)
+    # if not secrets:
+    #     return
 
     PROXYCURL_API_KEY = st.secrets["proxycurl"]
     GROQ_API_KEY = st.secrets["groq"]

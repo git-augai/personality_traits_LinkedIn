@@ -114,8 +114,8 @@ def main():
     default_secrets_path = r"./secrets.toml"  # Or any other standard location
     
 
-    PROXYCURL_API_KEY = st.secrets["proxycurl_api_key"]
-    GROQ_API_KEY = st.secrets["groq_api_key"]
+    PROXYCURL_API_KEY = st.secrets["proxycurl"]
+    GROQ_API_KEY = st.secrets["groq"]
 
     linkedin_url = st.text_input("Enter LinkedIn Profile URL")
 
